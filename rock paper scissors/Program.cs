@@ -2,6 +2,7 @@
 
 class Program
 {
+    static string[] choices = { "Rock", "Paper", "Scissors" };
     static void Main(string[] args)
     {
 
@@ -14,20 +15,22 @@ class Program
             Console.WriteLine("Invalid choice please enter Rock,Paper,Scissors!");
             playerchoice = Console.ReadLine();
         }
-
+        //while (true)
         //generate computer's choice
-        Ramdom ramdom = new Ramdom();
-        string[] choices = { "Rock, Paper, Scissors" };
-        string computerchoice = choices[ramdom.Next(choices.Length)];
+        Random random = new Random();
+        string[] choices = { "Rock", "Paper", "Scissors" };
+
+        int computerChoiceIndex = random.Next(0, 3);
+        string computerChoice = choices[computerChoiceIndex];
 
         string userChoice = playerchoice;
         string result;
 
-        if (userChoice == playerchoice)
+        if (userChoice == computerChoice)
         {
             result = "It's a tie!";
         }
-        else if ((userChoice == "Rock" && computerchoice == "Scissors") || (userChoice == "Paper" && computerchoice == "Rock") || (userChoice == "Scissors" && computerchoice == "Paper"))
+        else if ((userChoice == "Rock" && computerChoice == "Scissors") || (userChoice == "Paper" && computerChoice == "Rock") || (userChoice == "Scissors" && computerChoice == "Paper"))
         {
             result = "You Win";
         }
@@ -36,6 +39,14 @@ class Program
             result = "Computer wins!";
         }
 
+        // display result
+        Console.WriteLine($"your choice: {userChoice}");
+        Console.WriteLine($"computer's choice: {computerChoice}");
+        Console.WriteLine(result);
+
+        // wait for user input to exit
+        Console.WriteLine("Press agin key to exit...");
+        Console.ReadLine();
 
 
 
