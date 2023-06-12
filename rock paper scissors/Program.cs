@@ -52,20 +52,15 @@ class Program
             {
                 break;
             }
+            
+         
 
-
-            Console.WriteLine("Thanks for playing");
-
-
-
-        }   
+        }
             // wait for user input to exit
-            Console.WriteLine("Press agin key to exit...");
+            Console.WriteLine("Thanks for playing");
+            Console.WriteLine("Press return key to exit...");
             Console.ReadLine();
 
-
-
-        
 
     }
 }
